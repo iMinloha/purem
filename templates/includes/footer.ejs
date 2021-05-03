@@ -1,0 +1,32 @@
+<div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first"><%- themeConfig.siteDescription %></div>
+    <div class="social-container">
+        <% ['github', 'qq', 'google', 'windows', 'dribbble', 'facebook'].forEach((item) => { %>
+            <% if (site.customConfig[item]) { %>
+                <a href="<%= site.customConfig[item] %>" target="_blank">
+                    <i class="fab fa-<%= item %> gt-c-content-color-first"></i>
+                </a>
+            <% } %>
+        <% }) %>
+    </div>
+    <script src="<%=site.customConfig.cdn%>/media/scripts/des.js"></script></br>
+    <h4 id="sitetime"></h4></br>
+    <div class="footer-info">
+        <%- themeConfig.footerInfo %>
+    </div>
+    <div>
+<div id="myModal" class="modal">
+  <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+        Theme by <a href="https://www.minloha.cn" target="_blank">Minloha</a>, Powered by <a
+                href="https://github.com" target="_blank">Github
+    </div>
+</div>
+<script src="<%=site.customConfig.cdn%>/media/scripts/Meting.min.js"></script>
+<script src="<%=site.customConfig.cdn%>/media/scripts/dialog.js"></script>
+<script>
+  hljs.initHighlightingOnLoad()
+</script>

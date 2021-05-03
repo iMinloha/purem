@@ -1,0 +1,181 @@
+<script src="<%=site.customConfig.cdn%>/aplayer/APlayer.min.js"></script>
+<link rel="stylesheet" href="<%=site.customConfig.cdn%>/aplayer/APlayer.min.css">
+<div id="aplayer" class="aplayer"  data-id="<%=site.customConfig.music%>" data-server="netease" data-type="playlist" data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
+<script src="<%=site.customConfig.cdn%>/media/scripts/jquery-ui.js"></script>
+<script src="<%=site.customConfig.cdn%>/media/scripts/jquery-ui.min.js"></script>
+
+<script src="<%=site.customConfig.cdn%>/media/scripts/time_add.js"></script></br>
+<style>
+    /* 导航栏样式 */
+    .navbar {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        text-decoration: none;
+    }
+
+    .navbar-nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+    .navbar-collapse {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+    }
+
+    .navbar-toggler:hover,
+    .navbar-toggler:focus {
+        text-decoration: none;
+    }
+
+    @media (min-width: 992px) {
+        .navbar-expand-lg {
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+        }
+
+        .navbar-expand-lg .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        .navbar-expand-lg .navbar-collapse {
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+        }
+
+        .navbar-expand-lg .navbar-toggler {
+            display: none;
+        }
+    }
+
+    @media (max-width: 991px) {
+        #navbarSupportedContent {
+            display: none;
+        }
+    }
+</style>
+
+<!-- <button id="myImg">分享出去</button> -->
+
+<script src="<%=site.customConfig.cdn%>/media/scripts/jquery-3.5.1.min.js"></script>
+<script src="<%=site.customConfig.cdn%>/media/scripts/jquery-ui.js"></script>
+<script src="<%=site.customConfig.cdn%>/media/scripts/jquery-ui.min.js"></script>
+<script src="<%=site.customConfig.cdn%>/media/scripts/index.js"></script>
+
+
+<link rel="stylesheet" href="<%=site.customConfig.cdn%>/media/script/jquery-ui.min.css">
+
+<nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand"  id="myImg" title="点我分享出去哦~">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            <%= themeConfig.siteName %>
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="right_list">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+
+    <div class="list_menu">
+    <div class="list_right">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            <% menus.forEach(function(menu) { %>
+            <div class="nav-item">
+                <% if (menu.openType === 'External') { %>
+                <a href="<%= menu.link %>" class="menu gt-a-link" target="_blank">
+                    <%= menu.name %>
+                </a>
+                <% } else { %>
+                <a href="<%= menu.link %>" class="menu gt-a-link">
+                    <%= menu.name %>
+                </a>
+                <% } %>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            <% menus.forEach(function(menu) { %>
+            <div class="nav-item">
+                <% if (menu.openType === 'External') { %>
+                <a href="<%= menu.link %>" class="menu gt-a-link" target="_blank">
+                    <%= menu.name %>
+                </a>
+                <% } else { %>
+                <a href="<%= menu.link %>" class="menu gt-a-link">
+                    <%= menu.name %>
+                </a>
+                <% } %>
+            </div>
+            <% }); %>
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="<%=site.utils.now%>"
+                action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function () {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+<script type="text/javascript" src="<%=site.customConfig.cdn%>/media/scripts/mouse_text.js"></script>

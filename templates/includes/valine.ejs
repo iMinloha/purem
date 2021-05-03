@@ -1,0 +1,25 @@
+<script src="//unpkg.com/valine@1.4.4/dist/Valine.min.js"></script>
+<style>
+	div#vcomments{
+		width:<%=site.customConfig['vPercentWidth']%>%;
+		max-width: <%=site.customConfig['vMaxWidth']%>px;
+		padding: <%=site.customConfig['vPadding']%>
+	}
+</style>
+<% if(site.customConfig['valine']) { %>
+	<div id="vcomments"></div>
+<% } %>
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '<%=site.customConfig['APP_ID']%>',
+		appKey: '<%=site.customConfig['APP_KEY']%>',
+		avatar: '<%=site.customConfig['avatar']%>',
+		pageSize: <%=site.customConfig['pageSize']%>,
+		recordIp: <%=site.customConfig['recordIp']%>,
+		placeholder: '<%=site.customConfig['placeholder']%>',
+		visitor: <%=site.customConfig['visitor']%>,
+		enableQQ: true,
+		boolean: true,
+	});
+</script>
