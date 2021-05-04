@@ -1,6 +1,6 @@
 # Gridea主题模板
 
-![图片](https://cdn.minloha.cn/blog/img/blog.png)
+![](https://cdn.minloha.cn/blog/img/blog.png)
 
 ## 介绍
 
