@@ -1,4 +1,7 @@
 # Gridea主题模板
+
+![图片](https://cdn.minloha.cn/blog/img/blog.png)
+
 ## 介绍
 
 这是一款Gridea的主题，使用简单快速，并且有丰富的功能以及高度的可扩展性
